@@ -3,10 +3,10 @@
 namespace Illuminate\Pagination;
 
 use Closure;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use Illuminate\Support\Traits\ForwardsCalls;
 
 /**
@@ -110,7 +110,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Determine if the given value is a valid page number.
      *
-     * @param  int  $page
+     * @param int $page
+     *
      * @return bool
      */
     protected function isValidPageNumber($page)
@@ -133,8 +134,9 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Create a range of pagination URLs.
      *
-     * @param  int  $start
-     * @param  int  $end
+     * @param int $start
+     * @param int $end
+     *
      * @return array
      */
     public function getUrlRange($start, $end)
@@ -147,7 +149,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Get the URL for a given page number.
      *
-     * @param  int  $page
+     * @param int $page
+     *
      * @return string
      */
     public function url($page)
@@ -174,7 +177,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Get / set the URL fragment to be appended to URLs.
      *
-     * @param  string|null  $fragment
+     * @param string|null $fragment
+     *
      * @return $this|string|null
      */
     public function fragment($fragment = null)
@@ -191,8 +195,9 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Add a set of query string values to the paginator.
      *
-     * @param  array|string|null  $key
-     * @param  string|null  $value
+     * @param array|string|null $key
+     * @param string|null       $value
+     *
      * @return $this
      */
     public function appends($key, $value = null)
@@ -211,7 +216,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Add an array of query string values.
      *
-     * @param  array  $keys
+     * @param array $keys
+     *
      * @return $this
      */
     protected function appendArray(array $keys)
@@ -226,8 +232,9 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Add a query string value to the paginator.
      *
-     * @param  string  $key
-     * @param  string  $value
+     * @param string $key
+     * @param string $value
+     *
      * @return $this
      */
     protected function addQuery($key, $value)
@@ -252,8 +259,9 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Load a set of relationships onto the mixed relationship collection.
      *
-     * @param  string $relation
-     * @param  array  $relations
+     * @param string $relation
+     * @param array  $relations
+     *
      * @return $this
      */
     public function loadMorph($relation, $relations)
@@ -346,7 +354,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the query string variable used to store the page.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return $this
      */
     public function setPageName($name)
@@ -359,7 +368,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the base path to assign to all URLs.
      *
-     * @param  string  $path
+     * @param string $path
+     *
      * @return $this
      */
     public function withPath($path)
@@ -370,7 +380,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the base path to assign to all URLs.
      *
-     * @param  string  $path
+     * @param string $path
+     *
      * @return $this
      */
     public function setPath($path)
@@ -383,7 +394,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the number of links to display on each side of current page link.
      *
-     * @param  int  $count
+     * @param int $count
+     *
      * @return $this
      */
     public function onEachSide($count)
@@ -396,7 +408,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Resolve the current request path or return the default value.
      *
-     * @param  string  $default
+     * @param string $default
+     *
      * @return string
      */
     public static function resolveCurrentPath($default = '/')
@@ -411,7 +424,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the current request path resolver callback.
      *
-     * @param  \Closure  $resolver
+     * @param \Closure $resolver
+     *
      * @return void
      */
     public static function currentPathResolver(Closure $resolver)
@@ -422,8 +436,9 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Resolve the current page or return the default value.
      *
-     * @param  string  $pageName
-     * @param  int  $default
+     * @param string $pageName
+     * @param int    $default
+     *
      * @return int
      */
     public static function resolveCurrentPage($pageName = 'page', $default = 1)
@@ -438,7 +453,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the current page resolver callback.
      *
-     * @param  \Closure  $resolver
+     * @param \Closure $resolver
+     *
      * @return void
      */
     public static function currentPageResolver(Closure $resolver)
@@ -459,7 +475,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the view factory resolver callback.
      *
-     * @param  \Closure  $resolver
+     * @param \Closure $resolver
+     *
      * @return void
      */
     public static function viewFactoryResolver(Closure $resolver)
@@ -470,7 +487,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the default pagination view.
      *
-     * @param  string  $view
+     * @param string $view
+     *
      * @return void
      */
     public static function defaultView($view)
@@ -481,7 +499,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the default "simple" pagination view.
      *
-     * @param  string  $view
+     * @param string $view
+     *
      * @return void
      */
     public static function defaultSimpleView($view)
@@ -553,7 +572,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the paginator's underlying collection.
      *
-     * @param  \Illuminate\Support\Collection  $collection
+     * @param \Illuminate\Support\Collection $collection
+     *
      * @return $this
      */
     public function setCollection(Collection $collection)
@@ -566,7 +586,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Determine if the given item exists.
      *
-     * @param  mixed  $key
+     * @param mixed $key
+     *
      * @return bool
      */
     public function offsetExists($key)
@@ -577,7 +598,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Get the item at the given offset.
      *
-     * @param  mixed  $key
+     * @param mixed $key
+     *
      * @return mixed
      */
     public function offsetGet($key)
@@ -588,8 +610,9 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Set the item at the given offset.
      *
-     * @param  mixed  $key
-     * @param  mixed  $value
+     * @param mixed $key
+     * @param mixed $value
+     *
      * @return void
      */
     public function offsetSet($key, $value)
@@ -600,7 +623,8 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Unset the item at the given key.
      *
-     * @param  mixed  $key
+     * @param mixed $key
+     *
      * @return void
      */
     public function offsetUnset($key)
@@ -621,8 +645,9 @@ abstract class AbstractPaginator implements Htmlable
     /**
      * Make dynamic calls into the collection.
      *
-     * @param  string  $method
-     * @param  array  $parameters
+     * @param string $method
+     * @param array  $parameters
+     *
      * @return mixed
      */
     public function __call($method, $parameters)
